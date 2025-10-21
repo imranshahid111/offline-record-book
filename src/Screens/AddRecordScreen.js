@@ -164,15 +164,15 @@ const addTransaction = async () => {
           console.log('✅ Transaction inserted successfully');
 
           // 2️⃣ Update Supplier Totals
-          tx.executeSql(
-            `UPDATE users 
-             SET total_paid = COALESCE(total_paid,0) + ?, 
-                 total_balance = COALESCE(total_balance,0) + ?
-             WHERE id = ?;`,
-            [paid, balance, user_id],
-            () => console.log('✅ Supplier totals updated'),
-            (_, err) => console.error('❌ Supplier totals update error:', err)
-          );
+          // tx.executeSql(
+          //   `UPDATE users 
+          //    SET total_paid = COALESCE(total_paid,0) + ?, 
+          //        total_balance = COALESCE(total_balance,0) + ?
+          //    WHERE id = ?;`,
+          //   [paid, balance, user_id],
+          //   () => console.log('✅ Supplier totals updated'),
+          //   (_, err) => console.error('❌ Supplier totals update error:', err)
+          // );
 
           // 3️⃣ Reset Form
           setForm({

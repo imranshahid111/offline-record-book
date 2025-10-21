@@ -70,8 +70,12 @@ const exportToExcel = async () => {
       Fuel: item.fuel_name || 'N/A',
       Vehicle: item.vehicle_no || 'N/A',
       Weight: item.weight || '0',
+      per_unit_price: item.rate || '0',
       Total: item.total_payment || '0',
       Paid: item.paid_amount || '0',
+      Paid_Date: item.paid_date
+        ? new Date(item.paid_date).toLocaleDateString('en-GB').replace(/\//g, '-')
+        : 'N/A',
       Balance: item.runningBalance,
     }));
 
@@ -120,8 +124,10 @@ navigation.setOptions({
             <Text style={[styles.cell, styles.headerCell]}>Fuel</Text>
             <Text style={[styles.cell, styles.headerCell]}>Vehicle</Text>
             <Text style={[styles.cell, styles.headerCell]}>Weight</Text>
+            <Text style={[styles.cell, styles.headerCell]}>Per Unit</Text>
             <Text style={[styles.cell, styles.headerCell]}>Total</Text>
             <Text style={[styles.cell, styles.headerCell]}>Paid</Text>
+            <Text style={[styles.cell, styles.headerCell]}>Paid Date</Text>
             <Text style={[styles.cell, styles.headerCell]}>Balance</Text>
           </View>
 
@@ -136,9 +142,11 @@ navigation.setOptions({
                   </Text>
                   <Text style={styles.cell}>{item.fuel_name || 'N/A'}</Text>
                   <Text style={styles.cell}>{item.vehicle_no || 'N/A'}</Text>
+                  <Text style={styles.cell}>{item.rate || '0'}</Text>
                   <Text style={styles.cell}>{item.weight || '0'}</Text>
                   <Text style={styles.cell}>{item.total_payment || '0'}</Text>
                   <Text style={styles.cell}>{item.paid_amount || '0'}</Text>
+                  <Text style={styles.cell}> {item.paid_date ? new Date(item.paid_date).toLocaleDateString() : 'N/A'}</Text>
                   <Text style={[styles.cell, { fontWeight: 'bold', color: item.runningBalance > 0 ? 'red' : 'green' }]}>
                     {item.runningBalance}
                   </Text>

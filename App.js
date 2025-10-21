@@ -10,15 +10,15 @@ import AddRecordScreen from './src/Screens/AddRecordScreen';
 import Accounts from './src/Screens/Accounts';
 import SupplierLedgerScreen from './src/Screens/SupplierLedgerScreen';
 import EditRecordScreen from './src/Screens/EditRecordScreen';
+import {backupAndCleanDatabase} from './config/DbBackup'
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
 
   React.useEffect(() => {
-  // createTables();
+  backupAndCleanDatabase()
 }, []);
-
 
   return (
     <NavigationContainer>
