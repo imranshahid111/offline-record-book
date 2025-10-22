@@ -70,7 +70,7 @@ const exportToExcel = async () => {
       Fuel: item.fuel_name || 'N/A',
       Vehicle: item.vehicle_no || 'N/A',
       Weight: item.weight || '0',
-      per_unit_price: item.rate || '0',
+      Rate: item.rate || '0',
       Total: item.total_payment || '0',
       Paid: item.paid_amount || '0',
       Paid_Date: item.paid_date
@@ -123,8 +123,8 @@ navigation.setOptions({
             <Text style={[styles.cell, styles.headerCell]}>Date</Text>
             <Text style={[styles.cell, styles.headerCell]}>Fuel</Text>
             <Text style={[styles.cell, styles.headerCell]}>Vehicle</Text>
+            <Text style={[styles.cell, styles.headerCell]}>Rate</Text>
             <Text style={[styles.cell, styles.headerCell]}>Weight</Text>
-            <Text style={[styles.cell, styles.headerCell]}>Per Unit</Text>
             <Text style={[styles.cell, styles.headerCell]}>Total</Text>
             <Text style={[styles.cell, styles.headerCell]}>Paid</Text>
             <Text style={[styles.cell, styles.headerCell]}>Paid Date</Text>

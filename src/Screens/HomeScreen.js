@@ -89,7 +89,7 @@ export default function HomeScreen({ navigation }) {
         >
           <View style={styles.header}>
             <View>
-              <Text style={styles.greeting}>Hello 👋</Text>
+              <Text style={styles.greeting}>Hello Shahid Sab 👋</Text>
               <Text style={styles.title}>Boiler Khata</Text>
             </View>
             <TouchableOpacity style={styles.notificationBtn}>
